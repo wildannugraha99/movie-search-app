@@ -14,15 +14,17 @@ function runningData() {
     
     $.ajax({
         type: "GET",
-        url:'http://www.omdbapi.com/?apikey=49e1cf87&s='+inputSearch.value,
+        url:'https://www.omdbapi.com/?apikey=49e1cf87&s='+inputSearch.value,
         dataType: "json",
         success: function (data) {
-            console.log('Data:',data)
+            
            if(data.Response == 'True'){
+           
             $.map(data,function(i){
+                
                 for(i=0; i <=10; i++){
                     const image = document.createElement('div');
-                    image.innerHTML=`<img src="${data.Search[i].Poster}" alt="Poster image">`;
+                    image.innerHTML=`<img src="${data.Search[i].Poster}" alt="Movie image">`;
 
                     const titleMovie = document.createElement("h3");
                     titleMovie.innerText = data.Search[i].Title;
