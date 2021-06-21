@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    }
+    body{
+        background-color:whitesmoke;
+        background-image: url(assets/bg-wave.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position-y: 120px;
+    }
+    
+    main{
+        padding-bottom: 5%;
+    }
+    /*----------------------------------DI BAWAH INI UNTUK TAMPILAN SMARTPHONE------------------------------------------ */
+    .header{
+        margin: 0 0 0 0;
+        padding:5% 0 5% 3%;
+        border-bottom: 1px solid #212121;
+        background-color: #212121;
+        
+    }
+    .header h2{
+       border-bottom: 1px solid #212121;
+       width: 28%;
+       text-align: center;
+       color: whitesmoke;
+       
+        
+    }
+    .input{
+        text-align: center;
+        margin-top: 3%;
+    }
+    #input-search{
+        margin-top: 10px;
+        text-align: center;
+        padding: 3% 4%;
+        width: 90%;
+        border-radius: 20px;
+        box-shadow: 5px 8px 0px black;
+        font-size: 140%;
+        opacity: 0.6;
+        transition: 0.5s;
+    }
+    #input-search:focus{
+        outline: none;
+        opacity: 1;
+        border: 1px solid black;
+    }
+
+    .input-button{
+        margin-top: 20px;
+        padding:1% 10%;
+        font-size: 120%;
+        border-radius: 20px;
+        cursor:pointer;
+        background-color: #212121;
+        border: 1px solid black;
+        box-shadow: 1px 8px 0 black;
+        color: whitesmoke;
+        top: 0;
+    }
+    .input-button:active{
+        position: relative;
+        top: 7;
+        box-shadow: none;
+    }
+
+    .line{
+        border-bottom: 1px solid grey;
+        width:90%;
+        margin: auto;
+        margin-top: 5%;
+    }
+    
+    .labels h2{
+       text-align: center;
+       margin-top: 8%;
+       font-size:110%;
+      
+    }
+
+
+    .list-film{
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        margin: 5% 0 0% 0;
+        color: whitesmoke;
+        
+        
+    }
+
+    .list-film .cards{
+        margin: auto;
+        background-color: #212121;
+        border:5px solid black;
+        box-shadow:  6px 6px 0 black;
+        border-radius: 8px;
+        width:70%;
+        padding:5%;
+        margin-bottom: 30px;
+    }
+    .list-film .cards .inner img{
+        width:100%;
+        height: 220px;}
+    
+    .list-film .cards .inner h3{
+        border-top: 1px solid whitesmoke;
+        margin-top: 5%;
+    }
+
+    .list-film .notFound{
+        color: #212121;
+        margin: auto;
+        margin-top: 1%;
+        font-size:220%;
+        border: 1px solid black;
+        padding: 2%;
+        background-color: whitesmoke;
+        border-radius: 10px;
+    }
+   
+/*---------------------------------------------------------------------------------------------------------------------- */
+
+
+
+
+
+/*----------------------------------DI BAWAH INI UNTUK TAMPILAN DESKTOP------------------------------------------------ */
+    @media(min-width:920px){
+    .header{
+        padding:2% 0 2% 3%;
+        border-bottom: none;
+        background-color:whitesmoke;
+    }
+    .input{ margin-top: 1%;}
+    .header h2{
+       border: 3px solid black;
+       box-shadow:4px 4px 0 black;
+       width: 10%;
+       border-radius: 10px;
+       font-size: 170%;
+       background-color:#212121 ;
+       color: whitesmoke;
+       
+        
+    }
+    #input-search{
+        margin-top: 20px;
+        width: 60%;
+        font-size: 150%;
+        padding: 1% 2%;
+    }
+    .line{
+        margin-top: 2%;
+        width:70%;
+    }
+    .input-button{
+        margin-top: 25px;
+        padding:0.5% 5%;
+    }
+
+    .labels h2{
+        font-size:150%;
+        margin-top: 2%;
+       
+     }
+    
+     .list-film {
+        margin-top:15px
+    }
+    
+    .list-film .cards{
+        padding:1%;
+        width:30%;
+        
+        
+    }
+
+    .list-film .cards:nth-child(10){
+        margin: 0 0 0 20px;
+    }
+
+    .list-film .cards .inner img{
+        width: 200px;
+        height: 300px;
+        
+    }
+
+    .list-film .notFound{font-size:350%;}
+
+   
+}
+
+/*------------------------------------------------------------------------------------------------------------------- */

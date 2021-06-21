@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieZ.</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
+
+</head>
+<body>
+    <main>
+        <div class="header">
+            <h2>MovieZ.</h2>
+        </div>
+        
+        <div class="input">
+            <input type="search" name="input-search" id="input-search" placeholder="What's movie?"><br>
+            <input type="submit" value="Search" class="input-button">
+        </div>
+        <div class="line"></div>
+        <div class="labels"></div>
+        <div class="list-film">
+
+        </div>
+
+       
+    </main>
+
+
+
+
+    <script src="script.js"></script>
+   <script>
+       gsap.from(".header", {duration: 2.5, ease: "bounce.out", y:-100});
+       gsap.from(".input", {duration: 3, delay:1,ease: "back.out(0.8)", y:1000});
+   </script>
+</body>
+</html>
