@@ -41,6 +41,7 @@
         display: block;
         margin: auto;
         transition: 0.3s;
+       
     }
     .about:hover{
         transform: scale(1.2);
@@ -212,18 +213,24 @@
             margin-left: auto;
             margin-right: auto;
         }
-    
-        .list-film .notFound{
-        color: #212121;
-        margin: auto;
-        margin-top: 1%;
-        font-size:220%;
-        border: 1px solid black;
-        padding: 2%;
-        background-color: whitesmoke;
-        border-radius: 10px;
-    }
-   
+       .modalNotFound{
+            border: 1px solid 212121;
+            margin: auto;
+            background-color: 212121;
+            color:white;
+            width: 100%;
+            padding: 3% 5%;
+       }
+
+       .modalNotFound .imgNotFound{
+           width: 56%;
+           margin-top: 5%;
+            margin-bottom: 2%;
+       }
+       .modalNotFound .teksNotFound{
+            font-weight: bold;
+            font-size: 250%;
+       }
 /*---------------------------------------------------------------------------------------------------------------------- */
 
 
@@ -238,8 +245,6 @@
         background-color:#ffffff;
         flex-direction: row;
     }
-    .header .logos{width: 100%;}
-    
      .header .logos{flex-basis: 76%;}
      .about{width: 6%;text-align: center;}
      .about h3{
@@ -265,7 +270,7 @@
     .header .logo{
        border: 3px solid black;
        box-shadow:4px 4px 0 black;
-       width: 10%;
+       width: 13%;
        border-radius: 10px;
        font-size: 170%;
        background-color:#212121 ;
@@ -324,7 +329,7 @@
     }
     
     
-    .list-film .notFound{font-size:350%;}
+    
 
    
 }

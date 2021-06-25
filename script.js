@@ -63,11 +63,19 @@ function runningData() {
 
 
             } else {
-                const notFound = document.createElement('h1');
-                notFound.classList.add('notFound')
-                notFound.innerText = 'Oops... movie not found!'
-                container = document.querySelector('.list-film');
-                container.append(notFound);
+               const imageNotFound = document.createElement('div')
+               imageNotFound.innerHTML = `<img src="assets/undraw_page_not_found_su7k .svg" 
+               alt="image 404" class="imgNotFound">`
+
+               const textNotFound = document.createElement('div')
+               textNotFound.innerHTML = `<h3 class="teksNotFound">Oops...movie not found!</h3>`
+                
+               const modalNotFound = document.createElement('div')
+               modalNotFound.classList.add('modalNotFound')
+               modalNotFound.append(imageNotFound,textNotFound)
+
+               const container = document.querySelector('.list-film')
+               container.append(modalNotFound)
             }
         }
     });
@@ -127,12 +135,12 @@ $(".list-film").on('click', ".btnDetails", function () {
                             <div class="col-md-8">
                                 <ul>
                                     <li class="no-list-1"><h4>${film.Title}</h4></li>
-                                    <li>Genre: ${film.Genre}</li>
-                                    <li>Rated: ${film.Rated}</li>
-                                    <li>Released: ${film.Released}</li>
-                                    <li>Director: ${film.Director}</li>
-                                    <li>Writer: ${film.Writer}</li>
-                                    <li>Plot:</li>
+                                    <li><b>Genre:</b> ${film.Genre}</li>
+                                    <li><b>Rated:</b> ${film.Rated}</li>
+                                    <li><b>Released: </b>${film.Released}</li>
+                                    <li><b>Director:</b> ${film.Director}</li>
+                                    <li><b>Writer:</b> ${film.Writer}</li>
+                                    <li><b>Plot:</b></li>
                                     <li class="no-list-2">${film.Plot}</li>
                                     
                                 </ul>
