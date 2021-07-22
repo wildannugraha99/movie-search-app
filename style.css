@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-*{
-    padding:0;
+*{  padding:0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
@@ -249,14 +248,17 @@
         flex-direction: row;
     }
      .header .logos{flex-basis: 76%;}
-     .about{width: 6%;text-align: center;}
+     .about{width: 6%;
+        width: 8%;
+        text-align: center;
+        }
      .about h3{
          color: #212121;
          font-size: 250%;
      }
      .about span{
-         font-size: 34%;
-        
+         font-size: 40%;
+       
      }
     .input{ margin-top: 1%;}
     .inp-btn{margin-top:1.5%;}

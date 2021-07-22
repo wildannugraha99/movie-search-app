@@ -13,51 +13,43 @@ function runningData() {
 
 
     $.ajax({
-        type: "GET",
+        type: "POST",
         url: 'https://www.omdbapi.com/?apikey=49e1cf87&s=' + inputSearch.value,
         dataType: "json",
         success: function (data) {
-            console.log(data)
+          
             if (data.Response == 'True') {
 
-                $.map(data, function (i) {
+              $.each(data.Search, function (i, data) { 
+                const image = document.createElement('div');
+                image.innerHTML = `<img src="${data.Poster}" alt="Movie image">`;
 
-                    for (i = 0; i <= 10; i++) {
-                        const image = document.createElement('div');
-                        image.innerHTML = `<img src="${data.Search[i].Poster}" alt="Movie image">`;
+                const titleMovie = document.createElement("h3");
+                titleMovie.innerText = data.Title;
 
-                        const titleMovie = document.createElement("h3");
-                        titleMovie.innerText = data.Search[i].Title;
+                const typeMovie = document.createElement('p')
+                typeMovie.innerText = 'Type: ' + data.Type;
 
-                        const typeMovie = document.createElement('p')
-                        typeMovie.innerText = 'Type: ' + data.Search[i].Type;
+                const year = document.createElement('p')
+                year.innerText = 'Year: ' + data.Year;
 
-                        const year = document.createElement('p')
-                        year.innerText = 'Year: ' + data.Search[i].Year;
+                const buttonDetail = document.createElement('div')
+                buttonDetail.classList.add('btnDetail');
+                buttonDetail.innerHTML =`<button data-id="${data.imdbID}" class="btnDetails"
+                data-bs-toggle="modal" data-bs-target="#exampleModal">Detail <span><i class="fas fa-info-circle"></i></span></button>`
 
-                        const buttonDetail = document.createElement('div')
-                        buttonDetail.classList.add('btnDetail');
-                        buttonDetail.innerHTML =`<button data-id="${data.Search[i].imdbID}" class="btnDetails"
-                        data-bs-toggle="modal" data-bs-target="#exampleModal">Detail <span><i class="fas fa-info-circle"></i></span></button>`
+                const inner = document.createElement("div");
+                inner.classList.add("inner")
+                inner.append(image, titleMovie, typeMovie, year, buttonDetail);
 
-                        const inner = document.createElement("div");
-                        inner.classList.add("inner")
-                        inner.append(image, titleMovie, typeMovie, year, buttonDetail);
+                const cards = document.createElement('div');
+                cards.classList.add('cards');
+                cards.append(inner);
+                
+                container = document.querySelector('.list-film');
+                container.append(cards);
 
-                        const cards = document.createElement('div');
-                        cards.classList.add('cards');
-                        cards.append(inner);
-
-
-                        container = document.querySelector('.list-film');
-                        container.append(cards);
-
-
-
-
-                    }
-
-                })
+              });
 
 
 
@@ -83,7 +75,6 @@ function runningData() {
 
 function deleteData() {
     const inputSearch = document.querySelector('#input-search');
-
     $.ajax({
         type: "GET",
         url: 'https://www.omdbapi.com/?apikey=49e1cf87&s=' + inputSearch.value,
@@ -96,10 +87,6 @@ function deleteData() {
         }
     });
 }
-
-
-
-
 
 const searchButton = document.querySelector('.input-button');
 searchButton.addEventListener('click', function () {
@@ -116,6 +103,8 @@ const deleteButton = document.querySelector('.input-button-delete');
 deleteButton.addEventListener('click', function () {
     deleteData();
 })
+
+
 
 $(".list-film").on('click', ".btnDetails", function () {
         console.log($(this).data('id'))
